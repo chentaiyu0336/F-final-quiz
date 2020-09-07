@@ -1,20 +1,31 @@
 .App {
-  background-color: #eeeeee;
+  background-color: #f7f7f7;
+  padding-left: 4%;
+  padding-right: 4%;
+
   .divideListHead {
     padding-top: 2%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-content: center;
     align-items: center;
 
-    h2 {
-      margin-right: 70%;
-    }
     button {
       height: 30px;
       width: 100px;
       background-color: #ea5455;
       border: 0;
+    }
+  }
+
+  .studentListHead {
+    .studentListitem {
+      display: flex;
+      .item {
+        background-color: #eeeeee;
+        justify-content: space-between;
+        margin-left: 2%;
+      }
     }
   }
 }

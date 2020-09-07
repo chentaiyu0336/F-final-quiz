@@ -1,2 +1,20 @@
 .App {
+  background-color: #eeeeee;
+  .divideListHead {
+    padding-top: 2%;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+
+    h2 {
+      margin-right: 70%;
+    }
+    button {
+      height: 30px;
+      width: 100px;
+      background-color: #ea5455;
+      border: 0;
+    }
+  }
 }

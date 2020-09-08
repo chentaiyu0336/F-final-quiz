@@ -136,7 +136,7 @@ class StudentList extends Component {
         <div className="studentListitem">
           {this.state.students.map((student) => (
             <p className="item">
-              {student.id}. {student.name}
+              {student.id}. {student.studentName}
             </p>
           ))}
           <input

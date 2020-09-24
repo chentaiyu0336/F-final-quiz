@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
 import './App.scss';
 
-class StudentList extends Component {
+class TrainerList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      students: [],
+      trainers: [],
       newName: '',
     };
   }
 
   componentDidMount() {
-    this.getStudentList();
+    this.getTrainers();
   }
 
   addNewName = (event) => {
     this.setState({
       newName: event.target.value,
     });
-    fetch('http://localhost:8080/trainees', {
+    fetch('http://localhost:8080/trainers', {
       method: 'POST',
       mode: 'cors',
       headers: {
@@ -37,8 +37,8 @@ class StudentList extends Component {
       });
   };
 
-  getStudentList = () => {
-    fetch('http://localhost:8080/trainees?grouped=false', {
+  getTrainers = () => {
+    fetch('http://localhost:8080/trainers?grouped=false', {
       method: 'GET',
       mode: 'cors',
       headers: {
@@ -53,7 +53,7 @@ class StudentList extends Component {
       })
       .then((data) => {
         this.setState({
-          students: data,
+          trainers: data,
         });
       })
       .catch(() => {
@@ -64,17 +64,17 @@ class StudentList extends Component {
   render() {
     return (
       <div className="list-head">
-        <h2>学员列表</h2>
+        <h2>讲师列表</h2>
         <div className="list-item">
-          {this.state.students.map((student) => (
+          {this.state.trainers.map((trianer) => (
             <p className="item">
-              {student.id}. {student.name}
+              {trianer.id}. {trianer.name}
             </p>
           ))}
           <input
             className="add-item"
             type="text"
-            placeholder="+添加学员"
+            placeholder="+添加导师"
             value={this.state.newName}
             onChange={this.addNewName}
           />
@@ -84,4 +84,4 @@ class StudentList extends Component {
   }
 }
 
-export default StudentList;
+export default TrainerList;

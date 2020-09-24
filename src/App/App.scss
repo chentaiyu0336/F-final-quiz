@@ -3,7 +3,7 @@
   padding-left: 4%;
   padding-right: 4%;
 
-  .divideListHead {
+  .divide-list-head {
     padding-top: 2%;
     display: flex;
     justify-content: space-between;
@@ -18,13 +18,21 @@
     }
   }
 
-  .studentListHead {
-    .studentListitem {
-      // display: flex;
+  .student-list-head {
+    .student-list-item {
+      display: flex;
+      flex-wrap: wrap;
       .item {
+        width: 100px;
+        text-align: center;
         background-color: #eeeeee;
-        justify-content: space-between;
-        margin-left: 2%;
+        margin: 2% 2%;
+        padding: 20px 0;
+      }
+      .add-student {
+        width: 100px;
+        height: 56px;
+        margin: 2% 2%;
       }
     }
   }

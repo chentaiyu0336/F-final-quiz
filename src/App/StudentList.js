@@ -38,7 +38,7 @@ class StudentList extends Component {
   };
 
   getStudentList = () => {
-    fetch('http://localhost:8080/student', {
+    fetch('http://localhost:8080/trainees?grouped=false', {
       method: 'GET',
       mode: 'cors',
       headers: {
@@ -64,15 +64,16 @@ class StudentList extends Component {
 
   render() {
     return (
-      <div className="studentListHead">
+      <div className="student-list-head">
         <h2>学员列表</h2>
-        <div className="studentListitem">
+        <div className="student-list-item">
           {this.state.students.map((student) => (
             <p className="item">
-              {student.id}. {student.studentName}
+              {student.id}. {student.name}
             </p>
           ))}
           <input
+            className="add-student"
             type="text"
             placeholder="+添加学员"
             value={this.state.newName}

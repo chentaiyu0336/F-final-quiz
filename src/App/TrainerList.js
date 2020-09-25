@@ -15,6 +15,8 @@ class TrainerList extends Component {
   }
 
   addNewName = (event) => {
+    // TODO Feedback: 每次输入新字符，就会触发addNewName一次
+    // TODO Feedback: newName不需要存储到state
     this.setState({
       newName: event.target.value,
     });
@@ -38,6 +40,7 @@ class TrainerList extends Component {
   };
 
   getTrainers = () => {
+    // TODO Feedback: 建议把数据请求提取到单独的service
     fetch('http://localhost:8080/trainers?grouped=false', {
       method: 'GET',
       mode: 'cors',
@@ -64,7 +67,9 @@ class TrainerList extends Component {
   render() {
     return (
       <div className="list-head">
+        {/* TODO Feedback: 没有使用语义标签 */}
         <h2>讲师列表</h2>
+        {/* TODO Feedback: 列表用ul li更符合语义 */}
         <div className="list-item">
           {this.state.trainers.map((trianer) => (
             <p className="item">
